@@ -10,6 +10,7 @@ from pkg_resources import parse_version
 from sys import argv
 from Bio import SeqIO
 from Bio.SeqRecord import SeqRecord
+from Bio.Seq import Seq
 
 # Get input and output file names
 in_file = argv[1]
@@ -22,7 +23,7 @@ for rec in SeqIO.parse(in_file, "fasta"):
     name = rec.description.split("|")[1]
     if name not in name_set:
         name_set.add(name)
-        seq = SeqRecord(rec.seq.ungap(".").upper(), id=name, name=name, description=name)
+        seq = SeqRecord(Seq(str(rec.seq).replace(".","").upper()), id=name, name=name, description=name)
         seq_list.append(seq)
 
 # Overwrite file

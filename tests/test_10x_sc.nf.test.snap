@@ -4,56 +4,56 @@
             20,
             {
                 "ADD_META_TO_TAB": {
-                    "dplyr": "1.1.4",
+                    "dplyr": "1.2.0",
                     "optparse": "1.7.5",
-                    "R": "4.5.1"
+                    "R": "4.5.2"
                 },
                 "AIRRFLOW_REPORT": {
-                    "alakazam": "1.3.1",
-                    "shazam": "1.2.1",
-                    "stringr": "1.5.2",
-                    "dplyr": "1.1.4",
-                    "knitr": 1.5,
-                    "R": "4.5.1"
+                    "alakazam": "1.4.2.999",
+                    "shazam": "1.3.1",
+                    "stringr": "1.6.0",
+                    "dplyr": "1.2.0",
+                    "knitr": 1.51,
+                    "R": "4.5.2"
                 },
                 "CELLRANGER_VDJ": {
                     "cellranger": "8.0.0"
                 },
                 "CHANGEO_ASSIGNGENES": {
                     "igblastn": "1.22.0",
-                    "changeo": "1.3.0"
+                    "changeo": "1.3.4"
                 },
                 "CHANGEO_CONVERTDB_FASTA_FROM_AIRR": {
                     "igblastn": "1.22.0",
-                    "changeo": "1.3.0"
+                    "changeo": "1.3.4"
                 },
                 "CHANGEO_MAKEDB": {
                     "igblastn": "1.22.0",
-                    "changeo": "1.3.0"
+                    "changeo": "1.3.4"
                 },
                 "CHANGEO_PARSEDB_SPLIT": {
-                    "changeo": "1.3.0"
+                    "changeo": "1.3.4"
                 },
-                "CLONAL_ASSIGNMENT_COMPUTE": {
-                    "enchantr": "0.1.24"
-                },
-                "CLONAL_ASSIGNMENT_REPORT": {
+                "CLONAL_ASSIGNMENT": {
                     "enchantr": "0.1.24"
                 },
                 "FILTER_JUNCTION_MOD3": {
-                    "alakazam": "1.3.1",
+                    "alakazam": "1.4.2.999",
                     "optparse": "1.7.5",
-                    "airr": "1.5.0",
-                    "R": "4.5.1"
+                    "airr": "1.6.1",
+                    "R": "4.5.2"
                 },
                 "FILTER_QUALITY": {
-                    "alakazam": "1.3.1",
+                    "alakazam": "1.4.2.999",
                     "optparse": "1.7.5",
-                    "stringi": "1.8.3",
-                    "dplyr": "1.1.4",
-                    "airr": "1.5.0",
+                    "stringi": "1.8.7",
+                    "dplyr": "1.2.0",
+                    "airr": "1.6.1",
                     "DT": "0.34.0",
-                    "R": "4.5.1"
+                    "R": "4.5.2"
+                },
+                "REPERTOIRE_ANALYSIS": {
+                    "enchantr": "0.1.24"
                 },
                 "REPORT_FILE_SIZE": {
                     "enchantr": "0.1.24"
@@ -125,23 +125,21 @@
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/repertoires",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/repertoires/Patient1__clone-pass.tsv",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/search_index.json",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/tables",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/tables/clone_sizes_table.tsv",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/tables/num_clones_table.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/all_reps_clone_command_log.txt",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/assets",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/assets/logo.png",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/assets/style.css",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/index.html",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/params.RData",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/reference-keys.txt",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/repertoires",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/repertoires/Patient1__clone-pass.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/search_index.json",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/tables",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/tables/clone_sizes_table.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/tables/num_clones_table.tsv",
+                "clonal_analysis/repertoire_analysis",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/all_reps_clone_command_log.txt",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/assets",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/assets/logo.png",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/assets/style.css",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/index.html",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/params.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/reference-keys.txt",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/repertoires",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/repertoires/All_samples__repertoire-pass.tsv",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/search_index.json",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables/clone_sizes_table.tsv",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables/num_clones_table.tsv",
                 "clonal_analysis/report_threshold",
                 "clonal_analysis/report_threshold/all_reps_dist_report",
                 "clonal_analysis/report_threshold/all_reps_dist_report/assets",
@@ -261,7 +259,7 @@
                 "regions.fa:md5,1953406d913fb0fd753c6b56e847da83",
                 "Patient1_clone_command_log.txt:md5,c845c438c035a70e5b01d7100dc07a9c",
                 "style.css:md5,d0833d790556369103776a429102fedf",
-                "all_reps_clone_command_log.txt:md5,a2196dc568533023a52852f10efb8ce3",
+                "all_reps_clone_command_log.txt:md5,015303e434926603096d9315d3748cfe",
                 "style.css:md5,d0833d790556369103776a429102fedf",
                 "style.css:md5,d0833d790556369103776a429102fedf",
                 "all_reps_threshold_command_log.txt:md5,929fdf4dbf9472d3dc2433e4916d2fd5",
@@ -281,6 +279,6 @@
             "nf-test": "0.9.3",
             "nextflow": "25.10.2"
         },
-        "timestamp": "2026-01-23T13:18:30.134091641"
+        "timestamp": "2026-03-05T15:08:52.37042604"
     }
 }

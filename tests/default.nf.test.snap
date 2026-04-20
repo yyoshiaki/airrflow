@@ -4,33 +4,30 @@
             169,
             {
                 "ADD_META_TO_TAB": {
-                    "dplyr": "1.1.4",
+                    "dplyr": "1.2.0",
                     "optparse": "1.7.5",
-                    "R": "4.5.1"
+                    "R": "4.5.2"
                 },
                 "AIRRFLOW_REPORT": {
-                    "alakazam": "1.3.1",
-                    "shazam": "1.2.1",
-                    "stringr": "1.5.2",
-                    "dplyr": "1.1.4",
-                    "knitr": 1.5,
-                    "R": "4.5.1"
+                    "alakazam": "1.4.2.999",
+                    "shazam": "1.3.1",
+                    "stringr": "1.6.0",
+                    "dplyr": "1.2.0",
+                    "knitr": 1.51,
+                    "R": "4.5.2"
                 },
                 "CHANGEO_ASSIGNGENES": {
                     "igblastn": "1.22.0",
-                    "changeo": "1.3.0"
+                    "changeo": "1.3.4"
                 },
                 "CHANGEO_MAKEDB": {
                     "igblastn": "1.22.0",
-                    "changeo": "1.3.0"
+                    "changeo": "1.3.4"
                 },
                 "CHANGEO_PARSEDB_SPLIT": {
-                    "changeo": "1.3.0"
+                    "changeo": "1.3.4"
                 },
-                "CLONAL_ASSIGNMENT_COMPUTE": {
-                    "enchantr": "0.1.24"
-                },
-                "CLONAL_ASSIGNMENT_REPORT": {
+                "CLONAL_ASSIGNMENT": {
                     "enchantr": "0.1.24"
                 },
                 "COLLAPSE_DUPLICATES": {
@@ -46,19 +43,19 @@
                     "fastqc": "0.12.1"
                 },
                 "FILTER_JUNCTION_MOD3": {
-                    "alakazam": "1.3.1",
+                    "alakazam": "1.4.2.999",
                     "optparse": "1.7.5",
-                    "airr": "1.5.0",
-                    "R": "4.5.1"
+                    "airr": "1.6.1",
+                    "R": "4.5.2"
                 },
                 "FILTER_QUALITY": {
-                    "alakazam": "1.3.1",
+                    "alakazam": "1.4.2.999",
                     "optparse": "1.7.5",
-                    "stringi": "1.8.3",
-                    "dplyr": "1.1.4",
-                    "airr": "1.5.0",
+                    "stringi": "1.8.7",
+                    "dplyr": "1.2.0",
+                    "airr": "1.6.1",
                     "DT": "0.34.0",
-                    "R": "4.5.1"
+                    "R": "4.5.2"
                 },
                 "FIND_CLONAL_THRESHOLD": {
                     "enchantr": "0.1.24"
@@ -75,50 +72,53 @@
                     "pandas": "1.1.5"
                 },
                 "PRESTO_ASSEMBLEPAIRS_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_BUILDCONSENSUS_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_CLUSTERSETS_UMI": {
-                    "presto": "0.7.6",
-                    "vsearch": "v2.30.0"
+                    "presto": "0.7.8",
+                    "vsearch": "v2.30.4"
                 },
                 "PRESTO_COLLAPSESEQ_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_FILTERSEQ_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_MASKPRIMERS_SCORE_UMI_R1": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_MASKPRIMERS_SCORE_UMI_R2": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_PAIRSEQ_CLUSTERSETS": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_PAIRSEQ_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_PARSEHEADERS_COLLAPSE_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_PARSEHEADERS_METADATA_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_PARSEHEADERS_PRIMERS_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_PARSE_CLUSTER_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_POSTCONSENSUS_PAIRSEQ_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
                 },
                 "PRESTO_SPLITSEQ_UMI": {
-                    "presto": "0.7.6"
+                    "presto": "0.7.8"
+                },
+                "REPERTOIRE_ANALYSIS": {
+                    "enchantr": "0.1.24"
                 },
                 "REPORT_FILE_SIZE": {
                     "enchantr": "0.1.24"
@@ -140,71 +140,23 @@
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/assets",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/assets/logo.png",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/assets/style.css",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/ggplots",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/ggplots/abundanceSample.RData",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/ggplots/clone_size_cdf_plot.RData",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/ggplots/clone_size_plot.RData",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/ggplots/div_at_q.RData",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/ggplots/diversitySample.RData",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/ggplots/mutation_frequency_sample.RData",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/index.html",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/params.RData",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/reference-keys.txt",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/repertoires",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/repertoires/Patient1__clone-pass.tsv",
                 "clonal_analysis/clonal_assignment/Patient1_clone_report/search_index.json",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/tables",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/tables/clonal_abundance.tsv",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/tables/clonal_diversity.tsv",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/tables/clone_sizes_table.tsv",
-                "clonal_analysis/clonal_assignment/Patient1_clone_report/tables/num_clones_table.tsv",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/Patient2_clone_command_log.txt",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/assets",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/assets/logo.png",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/assets/style.css",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/ggplots",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/ggplots/abundanceSample.RData",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/ggplots/clone_size_cdf_plot.RData",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/ggplots/clone_size_plot.RData",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/ggplots/div_at_q.RData",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/ggplots/diversitySample.RData",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/ggplots/mutation_frequency_sample.RData",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/index.html",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/params.RData",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/reference-keys.txt",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/repertoires",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/repertoires/Patient2__clone-pass.tsv",
                 "clonal_analysis/clonal_assignment/Patient2_clone_report/search_index.json",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/tables",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/tables/clonal_abundance.tsv",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/tables/clonal_diversity.tsv",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/tables/clone_sizes_table.tsv",
-                "clonal_analysis/clonal_assignment/Patient2_clone_report/tables/num_clones_table.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/all_reps_clone_command_log.txt",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/assets",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/assets/logo.png",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/assets/style.css",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/ggplots",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/ggplots/abundanceSample.RData",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/ggplots/clone_size_cdf_plot.RData",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/ggplots/clone_size_plot.RData",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/ggplots/div_at_q.RData",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/ggplots/diversitySample.RData",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/ggplots/mutation_frequency_sample.RData",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/index.html",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/params.RData",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/reference-keys.txt",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/repertoires",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/repertoires/Patient1__clone-pass.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/repertoires/Patient2__clone-pass.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/search_index.json",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/tables",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/tables/clonal_abundance.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/tables/clonal_diversity.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/tables/clone_sizes_table.tsv",
-                "clonal_analysis/clonal_assignment/all_reps_clone_report/tables/num_clones_table.tsv",
                 "clonal_analysis/dowser_lineages",
                 "clonal_analysis/dowser_lineages/Patient1_dowser_command_log.txt",
                 "clonal_analysis/dowser_lineages/Patient1_dowser_report",
@@ -245,6 +197,35 @@
                 "clonal_analysis/find_threshold/all_reps_dist_report/tables/all_reps_threshold-mean.tsv",
                 "clonal_analysis/find_threshold/all_reps_dist_report/tables/all_reps_threshold-summary.tsv",
                 "clonal_analysis/find_threshold/all_reps_threshold_command_log.txt",
+                "clonal_analysis/repertoire_analysis",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/all_reps_clone_command_log.txt",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/assets",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/assets/logo.png",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/assets/style.css",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/Bootstrapping_Clonal_Overlap_Patient2.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/Clonal_Overlap_Patient1.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/Clonal_Overlap_Patient2.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/abundanceSample.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/clone_size_cdf_plot.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/clone_size_plot.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/div_at_q.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/diversitySample.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/mutation_frequency_sample.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/ggplots/mutation_frequency_sample_locus.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/index.html",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/params.RData",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/reference-keys.txt",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/repertoires",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/repertoires/All_samples__repertoire-pass.tsv",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/search_index.json",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables/clonal_abundance.tsv",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables/clonal_diversity.tsv",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables/clonal_overlap.tsv",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables/clone_sizes_table.tsv",
+                "clonal_analysis/repertoire_analysis/repertoire_analysis_report/tables/num_clones_table.tsv",
                 "fastp",
                 "fastp/Sample2",
                 "fastp/Sample2/Sample2.fastp.html",
@@ -532,6 +513,19 @@
                 "presto/05-parse-clusters/Sample7/Sample7_command_log.txt",
                 "presto/05-parse-clusters/Sample8",
                 "presto/05-parse-clusters/Sample8/Sample8_command_log.txt",
+                "presto/05-parse-clusters/pairseq",
+                "presto/05-parse-clusters/pairseq/Sample2",
+                "presto/05-parse-clusters/pairseq/Sample2/Sample2_command_log.txt",
+                "presto/05-parse-clusters/pairseq/Sample3",
+                "presto/05-parse-clusters/pairseq/Sample3/Sample3_command_log.txt",
+                "presto/05-parse-clusters/pairseq/Sample4",
+                "presto/05-parse-clusters/pairseq/Sample4/Sample4_command_log.txt",
+                "presto/05-parse-clusters/pairseq/Sample6",
+                "presto/05-parse-clusters/pairseq/Sample6/Sample6_command_log.txt",
+                "presto/05-parse-clusters/pairseq/Sample7",
+                "presto/05-parse-clusters/pairseq/Sample7/Sample7_command_log.txt",
+                "presto/05-parse-clusters/pairseq/Sample8",
+                "presto/05-parse-clusters/pairseq/Sample8/Sample8_command_log.txt",
                 "presto/06-build-consensus",
                 "presto/06-build-consensus/Sample2",
                 "presto/06-build-consensus/Sample2/Sample2_R1_table.tab",
@@ -857,14 +851,14 @@
                 "style.css:md5,d0833d790556369103776a429102fedf",
                 "Patient2_clone_command_log.txt:md5,33577bf0346f04389bd748845cebd23d",
                 "style.css:md5,d0833d790556369103776a429102fedf",
-                "all_reps_clone_command_log.txt:md5,8330aad6ad2fc8ff9eb8b27ce4b96cca",
-                "style.css:md5,d0833d790556369103776a429102fedf",
                 "Patient1_dowser_command_log.txt:md5,c57e1e23a1b48d636b3d499998aa8527",
                 "style.css:md5,d0833d790556369103776a429102fedf",
                 "Patient2_dowser_command_log.txt:md5,ef468c73cfcb68d55eafdba9f8edf04c",
                 "style.css:md5,d0833d790556369103776a429102fedf",
                 "style.css:md5,d0833d790556369103776a429102fedf",
                 "all_reps_threshold_command_log.txt:md5,9d11dfc74e37fc71180e648dbbc186bb",
+                "all_reps_clone_command_log.txt:md5,c31357b455f182f3d71e0c84289d1610",
+                "style.css:md5,d0833d790556369103776a429102fedf",
                 "multiqc_citations.txt:md5,d35df50e9903a96a2b3bce3c1fbc8ad2",
                 "multiqc_fastp.txt:md5,f08f62309e204a8eedf4371e4ac7b500",
                 "multiqc_fastqc_fastqc-1.txt:md5,f6b8822f161130fda71c58ed55136f2d",
@@ -906,8 +900,8 @@
         ],
         "meta": {
             "nf-test": "0.9.3",
-            "nextflow": "25.10.2"
+            "nextflow": "25.04.8"
         },
-        "timestamp": "2026-01-23T13:16:16.218450411"
+        "timestamp": "2026-03-10T11:36:20.586125504"
     }
 }

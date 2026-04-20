@@ -34,5 +34,5 @@ vdj_annotation/04-select-productive/**
 vdj_annotation/convert-db/**
 qc-filtering/bulk-qc-filtering/01-create-germlines/**
 vdj_annotation/select-locus/**/*
-databases/**
+germline_reference/**
 **/reference-keys.txt

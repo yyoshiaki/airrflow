@@ -61,6 +61,7 @@ def create_fastq_channels(LinkedHashMap col) {
     def meta = [:]
 
     meta.id                 = col.sample_id
+    meta.sample_id          = col.sample_id
     meta.subject_id         = col.subject_id
     meta.species            = col.species
     meta.collapseby_group   = col."${params.collapseby}"

@@ -15,12 +15,11 @@ def asString (args) {
     return s
 }
 
-process CLONAL_ASSIGNMENT {
+process REASSIGN_ALLELES {
     tag "${meta.id}"
 
     label 'process_long_parallelized'
     label 'immcantation'
-    label 'immcantation_container'
 
     if (workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1) {
         error "nf-core/airrflow currently does not support Conda. Please use a container profile instead."
@@ -28,12 +27,14 @@ process CLONAL_ASSIGNMENT {
     container "docker.io/immcantation/airrflow:5.0.0dev"
 
     input:
-    tuple val(meta), path(tabs), path(reference_fasta) // meta, sequence tsv in AIRR format
-    val threshold
-    path repertoires_samplesheet
-
+    tuple val(meta), path(tabs), path(reference_fasta) // meta, sequence tsv in AIRR format, reference fasta
+    val segments // which segments to reassign alleles to
+    val outputby // which field to use for output
+    //TODO: did we want to handle all segments at once? Then this val channel would not be needed.
+    // *After novel alleles we just need to change the V, it's a time waste to go over all segments.
+    //TODO: Check if we need the outputby parameter. Right now this is the same as the genotypeby parameter.
     output:
-    tuple val(meta), path("*/*/*clone-pass.tsv"), emit: tab // sequence tsv in AIRR format
+    tuple val(meta), path("*/*/*reassign-pass.tsv"), emit: tab // reassigned repertoire
     path("*/*_command_log.txt"), emit: logs //process logs
     path "*_report"
     path "versions.yml", emit: versions
@@ -41,28 +42,20 @@ process CLONAL_ASSIGNMENT {
 
     script:
     def args = task.ext.args ? asString(task.ext.args) : ''
-    def thr = threshold.join("")
-    def input = ""
-    if (repertoires_samplesheet) {
-        input = repertoires_samplesheet
-    } else {
-        input = tabs.join(',')
-    }
+    def segs = segments.join(",")
+    def input = tabs.join(',')
+
     """
-    Rscript -e "enchantr::enchantr_report('clonal_assignment', \\
+    Rscript -e "enchantr::enchantr_report('reassign_alleles', \\
                                         report_params=list('input'='${input}', \\
                                         'imgt_db'='${reference_fasta}', \\
                                         'species'='auto', \\
-                                        'cloneby'='${params.cloneby}', \\
-                                        'outputby'='${params.cloneby}', \\
-                                        'force'=FALSE, \\
-                                        'threshold'=${thr}, \\
-                                        'singlecell'='${params.singlecell}', \\
+                                        'outputby'='${outputby}', \\
+                                        'segments'='${segs}', \\
                                         'outdir'=getwd(), \\
-                                        'nproc'=${task.cpus}, \\
-                                        'log'='${meta.id}_clone_command_log' ${args}))"
+                                        'log'='${meta.id}_reassign_alleles_command_log' ${args}))"
 
-    cp -r enchantr ${meta.id}_clone_report && rm -rf enchantr
+    cp -r enchantr ${meta.id}_reassign_alleles_report && rm -rf enchantr
 
     echo "${task.process}": > versions.yml
     Rscript -e "cat(paste0('  enchantr: ',packageVersion('enchantr'),'\n'))" >> versions.yml

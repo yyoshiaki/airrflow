@@ -15,12 +15,11 @@ def asString (args) {
     return s
 }
 
-process CLONAL_ASSIGNMENT {
+process BAYESIAN_GENOTYPE_INFERENCE {
     tag "${meta.id}"
 
     label 'process_long_parallelized'
     label 'immcantation'
-    label 'immcantation_container'
 
     if (workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1) {
         error "nf-core/airrflow currently does not support Conda. Please use a container profile instead."
@@ -29,11 +28,9 @@ process CLONAL_ASSIGNMENT {
 
     input:
     tuple val(meta), path(tabs), path(reference_fasta) // meta, sequence tsv in AIRR format
-    val threshold
-    path repertoires_samplesheet
 
     output:
-    tuple val(meta), path("*/*/*clone-pass.tsv"), emit: tab // sequence tsv in AIRR format
+    tuple val(meta), path("*_report/references/*/db_genotype"), emit: reference // reference folder
     path("*/*_command_log.txt"), emit: logs //process logs
     path "*_report"
     path "versions.yml", emit: versions
@@ -41,28 +38,17 @@ process CLONAL_ASSIGNMENT {
 
     script:
     def args = task.ext.args ? asString(task.ext.args) : ''
-    def thr = threshold.join("")
-    def input = ""
-    if (repertoires_samplesheet) {
-        input = repertoires_samplesheet
-    } else {
-        input = tabs.join(',')
-    }
+    def input = tabs.join(',')
     """
-    Rscript -e "enchantr::enchantr_report('clonal_assignment', \\
+    Rscript -e "enchantr::enchantr_report('tigger_bayesian_genotype', \\
                                         report_params=list('input'='${input}', \\
                                         'imgt_db'='${reference_fasta}', \\
-                                        'species'='auto', \\
-                                        'cloneby'='${params.cloneby}', \\
-                                        'outputby'='${params.cloneby}', \\
-                                        'force'=FALSE, \\
-                                        'threshold'=${thr}, \\
-                                        'singlecell'='${params.singlecell}', \\
+                                        'genotypeby'='${params.genotypeby}', \\
+                                        'single_clone_representative'='${params.single_clone_representative}', \\
                                         'outdir'=getwd(), \\
-                                        'nproc'=${task.cpus}, \\
-                                        'log'='${meta.id}_clone_command_log' ${args}))"
+                                        'log'='${meta.id}_bayesian_genotype_inference_command_log' ${args}))"
 
-    cp -r enchantr ${meta.id}_clone_report && rm -rf enchantr
+    cp -r enchantr ${meta.id}_bayesian_genotype_inference_report && rm -rf enchantr
 
     echo "${task.process}": > versions.yml
     Rscript -e "cat(paste0('  enchantr: ',packageVersion('enchantr'),'\n'))" >> versions.yml

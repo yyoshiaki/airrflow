@@ -8,7 +8,7 @@ process DETECT_CONTAMINATION {
     if (workflow.profile.tokenize(',').intersect(['conda', 'mamba']).size() >= 1) {
         error "nf-core/airrflow currently does not support Conda. Please use a container profile instead."
     }
-    container "docker.io/immcantation/airrflow:5.0.0"
+    container "docker.io/immcantation/airrflow:5.0.0dev"
 
     input:
     path(tabs)
@@ -20,13 +20,14 @@ process DETECT_CONTAMINATION {
     path "versions.yml" , emit: versions
 
     script:
+    def args = task.ext.args ? asString(task.ext.args) : ''
     """
     echo "${tabs.join('\n')}" > tabs.txt
     Rscript -e "enchantr::enchantr_report('contamination', \\
         report_params=list('input'='tabs.txt',\\
         'input_id'='id','outdir'=getwd(), \\
         'outname'='cont-flag', \\
-        'log'='all_reps_contamination_command_log'))"
+        'log'='all_reps_contamination_command_log' ${args}))"
 
     cp -r enchantr all_reps_cont_report && rm -rf enchantr
 

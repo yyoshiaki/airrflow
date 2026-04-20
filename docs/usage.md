@@ -86,6 +86,8 @@ nextflow run nf-core/airrfow \
 --outdir results
 ```
 
+If you want to detect novel alleles and infer genotype of each individual, add the `--genotyping` flag in your command.
+
 Check the section [Input samplesheet](#input-samplesheet) below for instructions on how to create the samplesheet, and the [Supported library generation protocols](#supported-bulk-library-generation-methods-protocols) section below for examples on how to run the pipeline for the different bulk and single-cell sequencing protocols.
 For more detailed information about all the available parameters, please refer to the [parameters documentation](https://nf-co.re/airrflow/parameters).
 The command above will launch the pipeline with the `docker` configuration profile. See below for more information about profiles.
@@ -210,6 +212,8 @@ The required input file for processing raw BCR or TCR bulk targeted sequencing d
 
 - `filename` for single-cell assembled data: path to `airr_rearrangement.tsv` file, for example the one generated when processing the 10x Genomics scBCRseq / scTCRseq with 10x Genomics cellranger `cellranger vdj` or `cellranger multi`. The field accepts any tsv tables following the [AIRR rearrangement Schema specification](https://docs.airr-community.org/en/stable/datarep/rearrangements.html). See [here](https://support.10xgenomics.com/single-cell-vdj/software/pipelines/latest/output/annotation#airr) for more details on the cellranger output.
 - `filename` for bulk assembled data: path to `sequences.fasta` file, containing the assembled and error-corrected reads.
+
+For assembled AIRR input, duplicate collapsing is applied within each input repertoire so records from different input files are not merged together.
 
 The required input file for processing raw BCR or TCR bulk targeted sequencing data is a sample sheet in TSV format (tab separated). The columns `sample_id`, `filename`, `subject_id`, `species`, `tissue`, `single_cell`, `pcr_target_locus`, `sex`, `age` and `biomaterial_provider` are required.
 

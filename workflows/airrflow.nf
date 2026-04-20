@@ -40,6 +40,7 @@ include { VDJ_ANNOTATION                } from '../subworkflows/local/vdj_annota
 include { BULK_QC_AND_FILTER            } from '../subworkflows/local/bulk_qc_and_filter'
 include { SINGLE_CELL_QC_AND_FILTERING  } from '../subworkflows/local/single_cell_qc_and_filtering'
 include { CLONAL_ANALYSIS               } from '../subworkflows/local/clonal_analysis'
+include { NOVEL_ALLELES_AND_GENOTYPING   } from '../subworkflows/local/novel_alleles_and_genotyping'
 include { REPERTOIRE_ANALYSIS_REPORTING } from '../subworkflows/local/repertoire_analysis_reporting'
 include { SC_RAW_INPUT                  } from '../subworkflows/local/sc_raw_input'
 include { FASTQ_INPUT_CHECK             } from '../subworkflows/local/fastq_input_check'
@@ -246,11 +247,26 @@ workflow AIRRFLOW {
         ch_repertoires_after_qc = ch_bulk_filtered
                                         .mix(SINGLE_CELL_QC_AND_FILTERING.out.repertoires)
 
+        // Novel alleles and genotype inference
+        if (params.genotyping) {
+            NOVEL_ALLELES_AND_GENOTYPING(
+                ch_repertoires_after_qc,
+                VDJ_ANNOTATION.out.reference_fasta.collect(),
+                ch_validated_samplesheet.collect(),
+                ch_report_logo_img.collect().ifEmpty([])
+            )
+            ch_versions = ch_versions.mix( NOVEL_ALLELES_AND_GENOTYPING.out.versions )
+            ch_repertoire_reference = NOVEL_ALLELES_AND_GENOTYPING.out.repertoire_reference
+
+        } else {
+            ch_repertoire_reference = ch_repertoires_after_qc.combine(VDJ_ANNOTATION.out.reference_fasta)
+        }
+        ch_repertoire_reference.dump(tag: 'ch_repertoire_reference_forcloning')
+
         // Clonal analysis
         if (!params.skip_clonal_analysis) {
             CLONAL_ANALYSIS(
-                ch_repertoires_after_qc,
-                VDJ_ANNOTATION.out.reference_fasta.collect(),
+                ch_repertoire_reference,
                 ch_report_logo_img.collect().ifEmpty([])
             )
             ch_versions = ch_versions.mix( CLONAL_ANALYSIS.out.versions)
